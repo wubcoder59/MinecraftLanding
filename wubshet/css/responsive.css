@@ -1,0 +1,175 @@
+/* Responsive Styles */
+
+/* For large tablets and small laptops */
+@media screen and (max-width: 1024px) {
+    .about-content {
+        gap: 2rem;
+    }
+    
+    .tree-types {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* For tablets */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background-color: rgba(255, 255, 255, 0.95);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 98;
+        box-shadow: -2px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links li {
+        opacity: 0;
+        margin: 20px 0;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    /* Hero */
+    .hero-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    /* About */
+    .about-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .stats {
+        justify-content: center;
+    }
+    
+    /* Conservation */
+    .conservation-cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    /* Contact */
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+    /* Header */
+    .logo {
+        font-size: 1.5rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+    }
+    
+    /* Hero */
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    /* Section titles */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Stats */
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-item {
+        margin-bottom: 20px;
+    }
+    
+    /* Trees */
+    .tree-types {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Conservation */
+    .conservation-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Forms */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .footer-newsletter form {
+        flex-direction: column;
+    }
+    
+    .footer-newsletter input {
+        border-radius: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-newsletter .btn-small {
+        border-radius: 20px;
+    }
+}
+
+/* Animation for nav links when active (to be handled with CSS only since JS is not allowed) */
+/* This would normally be toggled with JS, but we'll provide the styles for completeness */
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
