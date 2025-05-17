@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilderness Haven - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sound-toggle" title="Toggle Forest Sounds">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off">🔇</span>
+    </div>
+    <audio id="forest-sounds" loop>
+        <source src="audio/forest-sounds.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Wilderness Haven</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html">Explore</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/contact-hero.jpg');">
+        <div class="hero-content">
+            <h2>Connect With Us</h2>
+            <p>Reach out to plan your visit, join conservation efforts, or simply learn more about our wilderness sanctuary</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <h4>Visit Us</h4>
+                        <p>Wilderness Haven Nature Preserve<br>
+                        1234 Forest Trail Road<br>
+                        Woodland Valley, WV 98765</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Opening Hours</h4>
+                        <p>Visitor Center: 9:00 AM - 5:00 PM, Daily<br>
+                        Trails: Dawn to Dusk, Year-round<br>
+                        <span style="font-style: italic;">Closed on Thanksgiving and Christmas Day</span></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Contact Information</h4>
+                        <p>Phone: (555) 123-4567<br>
+                        Email: info@wilderness-haven.org</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Find Us Online</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-icon" title="Instagram">Instagram</a> |
+                            <a href="#" class="social-icon" title="Facebook">Facebook</a> |
+                            <a href="#" class="social-icon" title="Twitter">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="visit">Planning a Visit</option>
+                                <option value="volunteer">Volunteer Opportunities</option>
+                                <option value="education">Educational Programs</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-info">
+        <div class="container">
+            <h2 class="section-title">Plan Your Visit</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎫</div>
+                    <h3>Admission & Fees</h3>
+                    <p>Adult: $12<br>
+                    Senior (65+): $8<br>
+                    Child (6-12): $5<br>
+                    Under 6: Free</p>
+                    <p>Annual passes and membership options available. All proceeds support conservation efforts.</p>
+                    <div class="hover-info">
+                        <span>Members receive unlimited visits, 10% off at the gift shop, and special event invitations!</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚗</div>
+                    <h3>Directions & Parking</h3>
+                    <p>Wilderness Haven is located 15 miles west of Woodland Valley. Follow Route 27 West and look for our entrance signs.</p>
+                    <p>Free parking is available at the visitor center with overflow options for busy weekends and events.</p>
+                    <div class="hover-info">
+                        <span>GPS Coordinates: 39.7812° N, 80.3456° W</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessibility</h3>
+                    <p>Our visitor center and Crystal Creek Boardwalk trail are fully accessible. Wheelchairs are available for loan at no charge.</p>
+                    <p>Service animals are welcome throughout the preserve, including trails and indoor facilities.</p>
+                    <div class="hover-info">
+                        <span>Contact us in advance for special accommodation requests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="involvement">
+        <div class="container">
+            <h2 class="section-title">Get Involved</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Volunteer Program</h3>
+                    <p>Join our dedicated team of volunteers who help maintain trails, assist visitors, conduct research, and support educational programs.</p>
+                    <p>No experience necessary - we provide training for all volunteer positions!</p>
+                    <div class="hover-info">
+                        <span>Volunteers contributed over 5,000 hours to Wilderness Haven last year</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Become a Supporter</h3>
+                    <p>Your financial support directly funds conservation projects, trail maintenance, wildlife monitoring, and educational programs.</p>
+                    <p>One-time donations, monthly giving, and legacy planning options available.</p>
+                    <div class="hover-info">
+                        <span>All donations are tax-deductible to the extent allowed by law</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏫</div>
+                    <h3>Educational Groups</h3>
+                    <p>We offer specialized programs for schools, universities, and other educational organizations. Our naturalists provide guided explorations tailored to your curriculum needs.</p>
+                    <p>Group rates available for 10 or more visitors.</p>
+                    <div class="hover-info">
+                        <span>Book at least 3 weeks in advance for educational group visits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3 class="faq-question">Can I bring my dog to Wilderness Haven?</h3>
+                    <div class="faq-answer">
+                        <p>We welcome leashed dogs on most of our trails, with the exception of sensitive wildlife areas such as the Woodland Observation Blind and Wetland Platform. Please keep dogs on a leash no longer than 6 feet at all times, and remember to pack out pet waste.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">What should I bring for a day hike?</h3>
+                    <div class="faq-answer">
+                        <p>We recommend carrying water, snacks, weather-appropriate clothing, sturdy footwear, insect repellent, and sunscreen. A trail map, camera, and binoculars are also useful. Cell service is limited in some areas, so don't rely solely on phone GPS.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Are there camping facilities at Wilderness Haven?</h3>
+                    <div class="faq-answer">
+                        <p>Wilderness Haven does not currently offer overnight camping facilities. We do have partners within 10 miles who provide camping and lodging options. Contact our visitor center for recommendations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3 class="faq-question">Is photography allowed?</h3>
+                    <div class="faq-answer">
+                        <p>Photography for personal use is encouraged throughout Wilderness Haven. Commercial photography or filming requires a permit. Please be mindful not to disturb wildlife or other visitors while taking photos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Wilderness Haven</h3>
+                    <p>A sanctuary for nature and those who seek to connect with it.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to our newsletter for seasonal updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Wilderness Haven. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Instagram">Instagram</a>
+                    <a href="#" class="social-icon" title="Facebook">Facebook</a>
+                    <a href="#" class="social-icon" title="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sound toggle functionality
+            const soundToggle = document.querySelector('.sound-toggle');
+            const audio = document.getElementById('forest-sounds');
+            
+            soundToggle.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    soundToggle.classList.add('playing');
+                } else {
+                    audio.pause();
+                    soundToggle.classList.remove('playing');
+                }
+            });
+
+            // Mobile navigation toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // FAQ Toggles
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+
+            // Form submission (would connect to a server in a real implementation)
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! In a real implementation, this form would send your information to our team. We would respond within 48 hours.');
+                contactForm.reset();
+            });
+        });
+    </script>
+
+    <style>
+        /* Additional page-specific styles */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            position: relative;
+            padding-right: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px 0;
+        }
+
+        .involvement, .visitor-info, .faq {
+            padding: 80px 0;
+        }
+
+        .involvement {
+            background-color: var(--light-green);
+        }
+
+        .faq {
+            background-color: var(--light-gray);
+        }
+    </style>
+</body>
+</html>

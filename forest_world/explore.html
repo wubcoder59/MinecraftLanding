@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilderness Haven - Explore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sound-toggle" title="Toggle Forest Sounds">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off">🔇</span>
+    </div>
+    <audio id="forest-sounds" loop>
+        <source src="audio/forest-sounds.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Wilderness Haven</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="explore.html" class="active">Explore</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/explore-hero.jpg');">
+        <div class="hero-content">
+            <h2>Explore Our Wilderness</h2>
+            <p>Discover trails, viewpoints, and natural wonders that will reconnect you with the natural world</p>
+        </div>
+    </section>
+
+    <section class="trails-section">
+        <div class="container">
+            <h2 class="section-title">Our Wilderness Trails</h2>
+            <p class="text-center">Explore our carefully maintained trail network, each offering unique ecosystems and experiences. From accessible boardwalks to challenging backcountry routes, there's a perfect path for every visitor.</p>
+            
+            <div class="trail-card">
+                <div class="trail-image" style="background-color: #2e6d50;"></div>
+                <div class="trail-content">
+                    <h3>Ancient Forest Loop</h3>
+                    <div class="trail-info">
+                        <div class="trail-detail">
+                            <span class="detail-label">Distance</span>
+                            <span class="detail-value">3.2 miles</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Difficulty</span>
+                            <span class="detail-value">Moderate</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Elevation Gain</span>
+                            <span class="detail-value">450 ft</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Estimated Time</span>
+                            <span class="detail-value">2-3 hours</span>
+                        </div>
+                    </div>
+                    <div class="trail-description">
+                        <p>Journey through one of the oldest forest stands in the region, where towering oak, maple, and hemlock trees create a cathedral-like canopy overhead. This loop trail features several sections of old-growth forest that have remained undisturbed for centuries.</p>
+                        <p>Notable features include the 300-year-old "Guardian Oak," natural spring seeps, and a diverse understory of ferns and woodland wildflowers. Spring brings an impressive display of trillium and spring beauties carpeting the forest floor.</p>
+                    </div>
+                    <div class="hover-info">
+                        <span>This trail passes through sensitive habitat. Please stay on marked paths to protect rare plants and prevent soil erosion.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trail-card">
+                <div class="trail-image" style="background-color: #a7c4a0;"></div>
+                <div class="trail-content">
+                    <h3>Crystal Creek Boardwalk</h3>
+                    <div class="trail-info">
+                        <div class="trail-detail">
+                            <span class="detail-label">Distance</span>
+                            <span class="detail-value">1.5 miles</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Difficulty</span>
+                            <span class="detail-value">Easy</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Elevation Gain</span>
+                            <span class="detail-value">Minimal</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Estimated Time</span>
+                            <span class="detail-value">1 hour</span>
+                        </div>
+                    </div>
+                    <div class="trail-description">
+                        <p>This fully accessible boardwalk trail winds alongside Crystal Creek, providing intimate views of this pristine waterway and the surrounding wetland ecosystem. The elevated wooden path protects the sensitive riparian habitat while allowing visitors to experience the rich biodiversity of this transitional zone.</p>
+                        <p>Interpretive signs highlight the ecological importance of wetlands, the water cycle, and the many species that depend on this habitat. Viewing platforms extend over the water at several points, providing excellent opportunities for wildlife observation and photography.</p>
+                    </div>
+                    <div class="hover-info">
+                        <span>This boardwalk is wheelchair accessible and suitable for all ages and abilities. Benches are provided every quarter mile.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trail-card">
+                <div class="trail-image" style="background-color: #5d4037;"></div>
+                <div class="trail-content">
+                    <h3>Ridge Overlook Trail</h3>
+                    <div class="trail-info">
+                        <div class="trail-detail">
+                            <span class="detail-label">Distance</span>
+                            <span class="detail-value">4.8 miles</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Difficulty</span>
+                            <span class="detail-value">Challenging</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Elevation Gain</span>
+                            <span class="detail-value">1,200 ft</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Estimated Time</span>
+                            <span class="detail-value">4-5 hours</span>
+                        </div>
+                    </div>
+                    <div class="trail-description">
+                        <p>For those seeking a more strenuous adventure, the Ridge Overlook Trail climbs through diverse forest zones to reach a spectacular viewpoint atop the eastern ridge. The trail begins in lowland hardwood forest, transitions through mixed pine-hardwood slopes, and emerges onto rocky outcrops with panoramic views of the entire wilderness area.</p>
+                        <p>The demanding ascent rewards hikers with changing ecosystems and increasingly dramatic vistas. At the summit, Eagle's Point provides a breathtaking 180-degree view of the valley, distant mountains, and the meandering Crystal Creek watershed. Wildlife sightings often include soaring hawks and eagles riding thermal updrafts along the ridge.</p>
+                    </div>
+                    <div class="hover-info">
+                        <span>This challenging trail requires proper footwear, ample water, and weather preparedness. Not recommended for inexperienced hikers or children under 12.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trail-card">
+                <div class="trail-image" style="background-color: #d7ccc8;"></div>
+                <div class="trail-content">
+                    <h3>Wilderness Loop Trail</h3>
+                    <div class="trail-info">
+                        <div class="trail-detail">
+                            <span class="detail-label">Distance</span>
+                            <span class="detail-value">7.5 miles</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Difficulty</span>
+                            <span class="detail-value">Moderate-Difficult</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Elevation Gain</span>
+                            <span class="detail-value">850 ft</span>
+                        </div>
+                        <div class="trail-detail">
+                            <span class="detail-label">Estimated Time</span>
+                            <span class="detail-value">5-6 hours</span>
+                        </div>
+                    </div>
+                    <div class="trail-description">
+                        <p>The signature trail of Wilderness Haven offers an immersive full-day experience through nearly every ecosystem in the preserve. This well-marked loop traverses hardwood forests, pine stands, creek crossings, small meadows, and an impressive rock formation known as Cathedral Rocks.</p>
+                        <p>Hikers will experience the full biodiversity of the region, with opportunities to observe wildlife throughout the varied habitats. The trail includes several rest areas and viewpoints, including Crystal Falls, a 25-foot waterfall that is most impressive after spring rains or during the fall color season.</p>
+                    </div>
+                    <div class="hover-info">
+                        <span>Pack a lunch and plenty of water for this all-day hike. Trail maps are essential as cell service is limited in remote sections.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wildlife-viewing">
+        <div class="container">
+            <h2 class="section-title">Wildlife Viewing Areas</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🦉</div>
+                    <h3>Woodland Observation Blind</h3>
+                    <p>This carefully designed hide allows visitors to observe forest wildlife without disturbing their natural behavior. Comfortable seating and viewing slots provide excellent visibility while keeping humans concealed.</p>
+                    <p><strong>Best time:</strong> Dawn or dusk for maximum activity</p>
+                    <div class="hover-info">
+                        <span>Common sightings include white-tailed deer, wild turkey, and various woodland birds</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🦅</div>
+                    <h3>Hawk Ridge Overlook</h3>
+                    <p>Located on the eastern ridge, this viewpoint offers exceptional bird watching opportunities, especially during migration seasons when hawks, eagles, and other raptors ride thermal currents along the ridge.</p>
+                    <p><strong>Best time:</strong> Fall migration (September-October)</p>
+                    <div class="hover-info">
+                        <span>Bring binoculars! On peak days, observers may spot hundreds of raptors passing overhead</span>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🦫</div>
+                    <h3>Wetland Platform</h3>
+                    <p>This elevated platform overlooks a beaver-created wetland that serves as a hub for aquatic wildlife. The shallow waters and diverse vegetation attract a wide variety of species.</p>
+                    <p><strong>Best time:</strong> Early morning or evening hours</p>
+                    <div class="hover-info">
+                        <span>Look for beaver lodges, great blue herons, various waterfowl, and occasional river otters</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Wilderness Haven Map</h2>
+            <p>Use this interactive map to plan your visit and explore our trails, viewpoints, and facilities. Click on map features for details about each location.</p>
+            <div class="map-container">
+                <!-- Map would be embedded here in a dynamic site -->
+                <div style="height:100%; display:flex; align-items:center; justify-content:center; background-color:#e9e9e9;">
+                    <div style="text-align:center; padding:20px;">
+                        <h3 style="margin-bottom:15px;">Wilderness Haven Trail Map</h3>
+                        <p>Our interactive trail map would be displayed here in a fully functional website.</p>
+                        <p style="margin-top:15px; font-style:italic;">Printed maps are available at the visitor center.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="visitor-guidelines">
+        <div class="container">
+            <h2 class="section-title">Visitor Guidelines</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👣</div>
+                    <h3>Leave No Trace</h3>
+                    <p>Help preserve the wilderness by following Leave No Trace principles. Pack out all trash, stay on designated trails, and leave natural objects undisturbed for others to enjoy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Plan Your Visit</h3>
+                    <p>Check trail conditions before starting your hike. Inform someone of your planned route and expected return time. Carry essentials including water, food, and appropriate clothing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🐻</div>
+                    <h3>Wildlife Safety</h3>
+                    <p>Observe wildlife from a safe distance. Never approach, feed, or disturb wild animals. Make noise while hiking to avoid surprising wildlife on the trail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for Your Wilderness Adventure?</h2>
+                <p>Contact us to learn more about guided experiences, educational programs, and conservation opportunities.</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Wilderness Haven</h3>
+                    <p>A sanctuary for nature and those who seek to connect with it.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to our newsletter for seasonal updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Wilderness Haven. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon" title="Instagram">Instagram</a>
+                    <a href="#" class="social-icon" title="Facebook">Facebook</a>
+                    <a href="#" class="social-icon" title="Twitter">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sound toggle functionality
+            const soundToggle = document.querySelector('.sound-toggle');
+            const audio = document.getElementById('forest-sounds');
+            
+            soundToggle.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    soundToggle.classList.add('playing');
+                } else {
+                    audio.pause();
+                    soundToggle.classList.remove('playing');
+                }
+            });
+
+            // Mobile navigation toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

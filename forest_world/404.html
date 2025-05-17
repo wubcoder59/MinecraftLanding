@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilderness Haven - Page Not Found</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sound-toggle" title="Toggle Forest Sounds">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off">🔇</span>
+    </div>
+    <audio id="forest-sounds" loop>
+        <source src="audio/forest-sounds.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="error-page">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-message">Trail Not Found</h2>
+        <div class="error-text">
+            <p>It seems you've wandered off the marked path. Even the most experienced explorers occasionally lose their way in the wilderness.</p>
+            <p>Let's help you find your way back to familiar territory.</p>
+        </div>
+        <a href="index.html" class="btn">Return to Main Trail</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sound toggle functionality
+            const soundToggle = document.querySelector('.sound-toggle');
+            const audio = document.getElementById('forest-sounds');
+            
+            soundToggle.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    soundToggle.classList.add('playing');
+                } else {
+                    audio.pause();
+                    soundToggle.classList.remove('playing');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
