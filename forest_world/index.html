@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest World - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1 class="logo">Forest World</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="attractions.html">Attractions</a></li>
+                <li><a href="animals.html">Wildlife</a></li>
+                <li><a href="conservation.html">Conservation</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to the Enchanting Forest World</h2>
+            <p>Discover the beauty and serenity of ancient forests</p>
+            <div class="hero-buttons">
+                <a href="attractions.html" class="btn">Explore Attractions</a>
+                <a href="conservation.html" class="btn btn-outline">Support Conservation</a>
+            </div>
+        </div>
+        <div class="sound-toggle" title="Toggle Forest Sounds">
+            <span class="sound-on">🔊</span>
+            <span class="sound-off">🔇</span>
+        </div>
+        <audio id="forest-sounds" loop>
+            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <section class="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2>Experience Nature's Symphony</h2>
+                    <p>Forest World is a sanctuary for those seeking to connect with nature. Our pristine forest environments span thousands of acres across diverse ecosystems, from ancient deciduous woodlands to misty coniferous highlands.</p>
+                    <p>Each area of our forest preserves offers unique flora, fauna, and sensory experiences that change with the seasons. Whether you're an adventurous hiker, a passionate photographer, or simply someone seeking tranquility, our forests welcome you.</p>
+                    <a href="attractions.html" class="btn-text">Discover Our Attractions <span class="arrow">→</span></a>
+                </div>
+                <div class="intro-image">
+                    <div class="image-container">
+                        <div class="img img-1"></div>
+                        <div class="caption">Ancient Oak Pathway</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Featured Experiences</h2>
+            <div class="featured-grid">
+                <div class="feature-card">
+                    <div class="feature-img trail"></div>
+                    <div class="feature-content">
+                        <h3>Guided Nature Trails</h3>
+                        <p>Explore our curated pathways with knowledgeable guides who reveal the secrets of the forest ecosystem.</p>
+                        <a href="attractions.html#trails" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img canopy"></div>
+                    <div class="feature-content">
+                        <h3>Canopy Walkways</h3>
+                        <p>Experience the forest from above as you traverse suspended bridges through the treetops.</p>
+                        <a href="attractions.html#canopy" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img wildlife"></div>
+                    <div class="feature-content">
+                        <h3>Wildlife Observation</h3>
+                        <p>Witness the diverse animals that call our forests home from specially designed viewing platforms.</p>
+                        <a href="animals.html" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Visitor Experiences</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The guided sunrise hike through the Ancient Grove was breath-taking. Our guide was incredibly knowledgeable about the local ecosystem and showed us wildlife we would have never spotted on our own."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Adventure Enthusiast</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"The canopy walkway experience completely changed my perspective of forests. Seeing the ecosystem from above gave me a new appreciation for the complexity and beauty of these environments."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Environmental Photographer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"I brought my family to Forest World for our summer vacation, and it was the perfect educational yet fun experience. The children's discovery programs kept my kids engaged while learning about nature conservation."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img"></div>
+                        <div class="author-info">
+                            <h4>Rebecca Torres</h4>
+                            <p>Family Traveler</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-events">
+        <div class="container">
+            <h2 class="section-title">Seasonal Highlights</h2>
+            <div class="season-tabs">
+                <div class="tab active" data-season="spring">Spring</div>
+                <div class="tab" data-season="summer">Summer</div>
+                <div class="tab" data-season="autumn">Autumn</div>
+                <div class="tab" data-season="winter">Winter</div>
+            </div>
+            <div class="season-content">
+                <div class="season-info spring active">
+                    <div class="season-text">
+                        <h3>Spring Awakening</h3>
+                        <p>Witness the forest come alive with new growth. Spring brings wildflower blooms, returning migratory birds, and the birth of new wildlife. Our spring programs include wildflower identification walks and dawn chorus experiences where you can hear the symphony of birdsong.</p>
+                        <ul class="season-highlights">
+                            <li>Trillium and Wildflower Festival (April)</li>
+                            <li>Bird Migration Observation Tours</li>
+                            <li>Spring Foraging Workshops</li>
+                        </ul>
+                    </div>
+                    <div class="season-image spring-img"></div>
+                </div>
+                <div class="season-info summer">
+                    <div class="season-text">
+                        <h3>Summer Splendor</h3>
+                        <p>Experience the forest at the height of its abundance. Summer offers lush canopies, forest swimming holes, and extended evening programs. The warm months are perfect for immersive experiences including nocturnal wildlife tours and forest camping adventures.</p>
+                        <ul class="season-highlights">
+                            <li>Nighttime Firefly Walks (June-July)</li>
+                            <li>Forest Bathing Wellness Retreats</li>
+                            <li>Sustainable Wilderness Camping</li>
+                        </ul>
+                    </div>
+                    <div class="season-image summer-img"></div>
+                </div>
+                <div class="season-info autumn">
+                    <div class="season-text">
+                        <h3>Autumn Transformation</h3>
+                        <p>Marvel at the spectacular color changes as the forest prepares for winter. Autumn is characterized by vibrant foliage, abundant mushroom growth, and the gathering of wildlife preparing for colder months. This season offers the most dramatic photographic opportunities.</p>
+                        <ul class="season-highlights">
+                            <li>Fall Foliage Photography Tours</li>
+                            <li>Mushroom Identification Walks</li>
+                            <li>Harvest Festival (October)</li>
+                        </ul>
+                    </div>
+                    <div class="season-image autumn-img"></div>
+                </div>
+                <div class="season-info winter">
+                    <div class="season-text">
+                        <h3>Winter Tranquility</h3>
+                        <p>Discover the quiet beauty of the dormant forest. Winter transforms the landscape with snow-covered branches and reveals wildlife tracks normally hidden by vegetation. Our winter programs focus on the resilience of nature and the subtle beauty of the sleeping forest.</p>
+                        <ul class="season-highlights">
+                            <li>Snowshoe Exploration Trails</li>
+                            <li>Winter Wildlife Tracking</li>
+                            <li>Solstice Celebration (December)</li>
+                        </ul>
+                    </div>
+                    <div class="season-image winter-img"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="conservation-highlight">
+        <div class="container">
+            <div class="conservation-content">
+                <div class="conservation-text">
+                    <h2>Preserving Our Forests For Future Generations</h2>
+                    <p>At Forest World, conservation is at the heart of everything we do. Our team of ecologists and environmental scientists work tirelessly to monitor forest health, conduct research, and implement sustainable management practices.</p>
+                    <p>Your visit directly supports our conservation initiatives, including habitat restoration, wildlife protection, and environmental education programs for local communities.</p>
+                    <div class="conservation-stats">
+                        <div class="stat">
+                            <span class="number">5,000+</span>
+                            <span class="label">Acres Protected</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">120+</span>
+                            <span class="label">Species Monitored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">10,000+</span>
+                            <span class="label">Trees Planted Annually</span>
+                        </div>
+                    </div>
+                    <a href="conservation.html" class="btn">Learn About Our Conservation Efforts</a>
+                </div>
+                <div class="conservation-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-events">
+        <div class="container">
+            <h2 class="section-title">Latest News & Events</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">12</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Summer Solstice Night Walk</h3>
+                        <p>Experience the magic of the forest at night during our annual Summer Solstice celebration. Guided walks, storytelling, and stargazing.</p>
+                        <a href="#" class="btn-text">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">25</span>
+                        <span class="month">JUN</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Rare Bird Species Returns</h3>
+                        <p>After conservation efforts, the Scarlet Tanager has returned to nest in our Eastern Forest Preserve. Join special birdwatching tours.</p>
+                        <a href="#" class="btn-text">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <div class="news-date">
+                        <span class="day">08</span>
+                        <span class="month">JUL</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Forest Photography Workshop</h3>
+                        <p>Learn techniques for capturing the beauty of the forest with professional nature photographer Elena Mikhailov.</p>
+                        <a href="#" class="btn-text">Learn More <span class="arrow">→</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="center-btn">
+                <a href="#" class="btn btn-outline">View All News & Events</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Connected with Forest World</h2>
+                <p>Subscribe to our newsletter to receive seasonal updates, event announcements, and conservation news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Forest World</h3>
+                    <p>Dedicated to preserving and sharing the wonder of forest ecosystems through immersive experiences and conservation initiatives.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">FB</a>
+                        <a href="#" class="social-icon" title="Instagram">IG</a>
+                        <a href="#" class="social-icon" title="Twitter">TW</a>
+                        <a href="#" class="social-icon" title="YouTube">YT</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="attractions.html">Attractions</a></li>
+                        <li><a href="animals.html">Wildlife</a></li>
+                        <li><a href="conservation.html">Conservation</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-visits">
+                    <h4>Plan Your Visit</h4>
+                    <ul>
+                        <li><a href="#">Tickets & Pricing</a></li>
+                        <li><a href="#">Opening Hours</a></li>
+                        <li><a href="#">Directions & Parking</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Group Bookings</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <address>
+                        <p>1234 Forest Path Road</p>
+                        <p>Woodland Valley, WV 98765</p>
+                        <p>Email: info@forestworld.org</p>
+                        <p>Phone: (555) 123-4567</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Forest World. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sound toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const soundToggle = document.querySelector('.sound-toggle');
+            const audio = document.getElementById('forest-sounds');
+            
+            soundToggle.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                    soundToggle.classList.add('playing');
+                } else {
+                    audio.pause();
+                    soundToggle.classList.remove('playing');
+                }
+            });
+
+            // Season tabs functionality
+            const tabs = document.querySelectorAll('.tab');
+            const seasonInfos = document.querySelectorAll('.season-info');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const season = tab.getAttribute('data-season');
+                    
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Hide all season infos
+                    seasonInfos.forEach(info => info.classList.remove('active'));
+                    
+                    // Show the selected season info
+                    document.querySelector(`.season-info.${season}`).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest World - Attractions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/attractions-header.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 7rem;
+        }
+        
+        .attraction-section {
+            padding: 8rem 0;
+        }
+        
+        .attraction-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .attraction-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+        
+        .attraction-content:nth-child(even) .attraction-text {
+            order: 2;
+        }
+        
+        .attraction-content:nth-child(even) .attraction-image {
+            order: 1;
+        }
+        
+        .attraction-image {
+            height: 40rem;
+            border-radius: var(--border-radius);
+            background-size: cover;
+            background-position: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .attraction-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .attraction-image:hover::before {
+            opacity: 1;
+        }
+        
+        .attraction-features {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-item {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-standard);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .feature-icon {
+            width: 5rem;
+            height: 5rem;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .feature-item h4 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/cta-bg.jpg') center/cover fixed no-repeat;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            color: var(--white);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media screen and (max-width: 992px) {
+            .attraction-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .attraction-content:nth-child(even) .attraction-text,
+            .attraction-content:nth-child(even) .attraction-image {
+                order: unset;
+            }
+            
+            .attraction-image {
+                height: 30rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 30rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Forest World</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="attractions.html" class="active">Attractions</a></li>
+                    <li><a href="animals.html">Wildlife</a></li>
+                    <li><a href="conservation.html">Conservation</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Discover Our Attractions</h1>
+            <p>Immerse yourself in the wonders of the forest through our curated experiences</p>
+        </div>
+    </section>
+
+    <section id="trails" class="attraction-section">
+        <div class="container">
+            <h2 class="section-title">Guided Nature Trails</h2>
+            <div class="attraction-content">
+                <div class="attraction-text">
+                    <h3>Explore the Forest on Foot</h3>
+                    <p>Our guided nature trails offer visitors an intimate experience with the forest ecosystem. Led by experienced naturalists, these walks provide insight into the complex relationships between plants, animals, fungi, and their environment.</p>
+                    <p>Each trail has been carefully designed to showcase different aspects of forest ecology while minimizing impact on sensitive habitats. From ancient woodland paths to newly restored ecosystems, our diverse trail network accommodates all ages and ability levels.</p>
+                    <div class="attraction-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🥾</div>
+                            <h4>Difficulty Levels</h4>
+                            <p>Trails range from easy, accessible paths to challenging terrain for experienced hikers.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⏱️</div>
+                            <h4>Duration Options</h4>
+                            <p>Choose from 1-hour introductory walks to full-day immersive experiences.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                            <h4>Family Friendly</h4>
+                            <p>Special trails and activities designed for children and families to enjoy together.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-image" style="background-image: url('images/guided-trail.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="canopy" class="attraction-section">
+        <div class="container">
+            <h2 class="section-title">Canopy Walkways</h2>
+            <div class="attraction-content">
+                <div class="attraction-text">
+                    <h3>Experience the Forest From Above</h3>
+                    <p>Our network of elevated walkways allows visitors to experience the forest canopy – a rich habitat typically hidden from ground-level observation. From 20 meters above the forest floor, you'll discover a completely different ecosystem teeming with unique plant and animal life.</p>
+                    <p>The canopy walkway system spans over 1.5 kilometers, connecting observation platforms and treehouse stations. This engineering marvel was carefully constructed to minimize impact on the trees while providing unprecedented access to upper forest levels.</p>
+                    <div class="attraction-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🌳</div>
+                            <h4>Tree Diversity</h4>
+                            <p>Observe different tree species and their unique adaptations up close.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🦜</div>
+                            <h4>Birdwatching</h4>
+                            <p>The canopy level offers prime viewing of bird species rarely seen from the ground.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🌅</div>
+                            <h4>Sunrise Tours</h4>
+                            <p>Experience the magical awakening of the forest from the treetops at dawn.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-image" style="background-image: url('images/canopy.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wildlife" class="attraction-section">
+        <div class="container">
+            <h2 class="section-title">Wildlife Observation</h2>
+            <div class="attraction-content">
+                <div class="attraction-text">
+                    <h3>Encounter Forest Inhabitants</h3>
+                    <p>Our specially designed wildlife observation areas provide opportunities to witness forest animals in their natural habitat. Strategically placed viewing blinds, hides, and platforms allow visitors to observe wildlife behavior without disturbing the animals.</p>
+                    <p>Forest World is home to over 120 species of mammals, birds, reptiles, and amphibians. Our wildlife programs emphasize ethical wildlife watching practices and foster appreciation for the intricate relationships between species.</p>
+                    <div class="attraction-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🦌</div>
+                            <h4>Mammal Watching</h4>
+                            <p>Dawn and dusk tours increase chances of spotting deer, foxes, and other mammals.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📸</div>
+                            <h4>Photography Hides</h4>
+                            <p>Specialized hides with camera ports for wildlife photographers.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔬</div>
+                            <h4>Research Participation</h4>
+                            <p>Join our scientists in monitoring wildlife populations and behavior.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-image" style="background-image: url('images/wildlife-observation.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive" class="attraction-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Discovery Center</h2>
+            <div class="attraction-content">
+                <div class="attraction-text">
+                    <h3>Learn Through Exploration</h3>
+                    <p>Our state-of-the-art Discovery Center offers hands-on exhibits that explain forest ecology, conservation challenges, and sustainable practices. Interactive displays, multimedia presentations, and guided activities make complex ecological concepts accessible to visitors of all ages.</p>
+                    <p>The center also houses a natural history collection, research facilities, and classrooms for educational programs. Regular workshops, talks, and special events connect visitors with researchers and conservationists working to protect forest ecosystems.</p>
+                    <div class="attraction-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🧪</div>
+                            <h4>Science Lab</h4>
+                            <p>Participate in real experiments studying forest ecology and biodiversity.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎮</div>
+                            <h4>Simulation Games</h4>
+                            <p>Experience forest management challenges through interactive scenarios.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🎨</div>
+                            <h4>Art & Nature Studio</h4>
+                            <p>Express your forest experience through various artistic mediums.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-image" style="background-image: url('images/discovery-center.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="retreats" class="attraction-section">
+        <div class="container">
+            <h2 class="section-title">Forest Retreats</h2>
+            <div class="attraction-content">
+                <div class="attraction-text">
+                    <h3>Immerse in Tranquility</h3>
+                    <p>For those seeking a deeper connection with nature, our forest retreats offer extended stays in serene, natural settings. Choose from treehouse cabins, forest lodges, or guided wilderness camping for an unforgettable overnight experience.</p>
+                    <p>Each accommodation option balances comfort with minimal environmental impact, utilizing sustainable building practices, renewable energy, and responsible waste management. Extended stays include special access to early morning and evening programs typically unavailable to day visitors.</p>
+                    <div class="attraction-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">🏡</div>
+                            <h4>Eco-Lodging</h4>
+                            <p>Sustainable accommodations ranging from rustic to luxurious comfort levels.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🧘</div>
+                            <h4>Wellness Programs</h4>
+                            <p>Forest bathing, meditation, and yoga sessions in natural settings.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🥗</div>
+                            <h4>Farm-to-Table Dining</h4>
+                            <p>Meals prepared with local, seasonal ingredients from our forest garden.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="attraction-image" style="background-image: url('images/forest-retreat.jpg');"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Forest World?</h2>
+                <p>Book your visit today and immerse yourself in the wonder of the forest. Special rates available for families, groups, and educational institutions.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn">Book Your Visit</a>
+                    <a href="#" class="btn btn-outline">View Pricing Options</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Forest World</h3>
+                    <p>Dedicated to preserving and sharing the wonder of forest ecosystems through immersive experiences and conservation initiatives.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">FB</a>
+                        <a href="#" class="social-icon" title="Instagram">IG</a>
+                        <a href="#" class="social-icon" title="Twitter">TW</a>
+                        <a href="#" class="social-icon" title="YouTube">YT</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="attractions.html">Attractions</a></li>
+                        <li><a href="animals.html">Wildlife</a></li>
+                        <li><a href="conservation.html">Conservation</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-visits">
+                    <h4>Plan Your Visit</h4>
+                    <ul>
+                        <li><a href="#">Tickets & Pricing</a></li>
+                        <li><a href="#">Opening Hours</a></li>
+                        <li><a href="#">Directions & Parking</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Group Bookings</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <address>
+                        <p>1234 Forest Path Road</p>
+                        <p>Woodland Valley, WV 98765</p>
+                        <p>Email: info@forestworld.org</p>
+                        <p>Phone: (555) 123-4567</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Forest World. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

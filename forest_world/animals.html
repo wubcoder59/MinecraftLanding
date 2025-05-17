@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest World - Wildlife</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/wildlife-header.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 7rem;
+        }
+        
+        .wildlife-intro {
+            padding: 8rem 0;
+            background-color: var(--white);
+        }
+        
+        .wildlife-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+            gap: 3rem;
+            margin-top: 5rem;
+        }
+        
+        .species-category {
+            padding: 8rem 0;
+        }
+        
+        .species-category:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .species-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-standard);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .species-card:hover {
+            transform: translateY(-1rem);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .species-img {
+            height: 25rem;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .species-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: var(--transition-standard);
+        }
+        
+        .species-card:hover .species-img::before {
+            opacity: 1;
+        }
+        
+        .species-content {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .species-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .species-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 1.4rem;
+        }
+        
+        .species-content p {
+            margin-bottom: 2rem;
+        }
+        
+        .fun-fact {
+            background-color: var(--light-green);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: auto;
+        }
+        
+        .fun-fact h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            color: var(--dark-green);
+        }
+        
+        .fun-fact p {
+            margin-bottom: 0;
+            font-size: 1.4rem;
+        }
+        
+        .conservation-status {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+        
+        .status-lc {
+            background-color: #a8e6cf;
+            color: #1b5e20;
+        }
+        
+        .status-nt {
+            background-color: #dff0a4;
+            color: #33691e;
+        }
+        
+        .status-vu {
+            background-color: #ffe8b6;
+            color: #e65100;
+        }
+        
+        .status-en {
+            background-color: #ffaaa5;
+            color: #c62828;
+        }
+        
+        .status-cr {
+            background-color: #ff8b94;
+            color: #b71c1c;
+        }
+        
+        .wildlife-watch {
+            padding: 8rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/wildlife-watching.jpg') center/cover fixed no-repeat;
+            color: var(--white);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .tip-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1rem);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-standard);
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-0.5rem);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .tip-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tip-card h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .seasonal-wildlife {
+            padding: 8rem 0;
+            background-color: var(--beige);
+        }
+        
+        .season-selector {
+            display: flex;
+            justify-content: center;
+            margin: 4rem 0;
+            gap: 2rem;
+        }
+        
+        .season-btn {
+            padding: 1rem 2.5rem;
+            background-color: var(--white);
+            border-radius: 3rem;
+            cursor: pointer;
+            transition: var(--transition-standard);
+        }
+        
+        .season-btn:hover {
+            background-color: var(--light-green);
+        }
+        
+        .season-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .seasonal-content {
+            position: relative;
+        }
+        
+        .seasonal-panel {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .seasonal-panel.active {
+            opacity: 1;
+            position: relative;
+            pointer-events: all;
+        }
+        
+        .wildlife-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .wildlife-table th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: left;
+            padding: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .wildlife-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .wildlife-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .wildlife-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .wildlife-table tr:hover {
+            background-color: var(--light-green);
+        }
+        
+        @media screen and (max-width: 768px) {
+            .wildlife-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .season-selector {
+                flex-wrap: wrap;
+            }
+            
+            .season-btn {
+                flex: 1;
+                min-width: 12rem;
+                text-align: center;
+            }
+        }
+        
+        /* Audio hover effect */
+        .audio-hover {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .audio-icon {
+            opacity: 0.7;
+            margin-left: 0.5rem;
+            transition: var(--transition-standard);
+        }
+        
+        .audio-hover:hover .audio-icon {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Forest World</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="attractions.html">Attractions</a></li>
+                    <li><a href="animals.html" class="active">Wildlife</a></li>
+                    <li><a href="conservation.html">Conservation</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Forest Wildlife</h1>
+            <p>Discover the diverse animals that call our forests home</p>
+        </div>
+    </section>
+
+    <section class="wildlife-intro">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Forest Ecosystem</h2>
+                <p class="mb-4">Forest World is home to a rich diversity of wildlife, from tiny insects to large mammals. Our protected areas provide habitat for over 250 animal species, many of which are threatened or endangered. As you explore our trails and observation areas, you'll have the opportunity to witness these remarkable creatures in their natural environment.</p>
+                <p>Our wildlife programs emphasize ethical observation practices that minimize disturbance to animals. By maintaining appropriate distances and using designated viewing areas, we ensure that wildlife can continue their natural behaviors while visitors enjoy meaningful encounters.</p>
+            </div>
+            
+            <div class="wildlife-grid">
+                <div class="wildlife-stat">
+                    <div class="stat">
+                        <span class="number">250+</span>
+                        <span class="label">Animal Species</span>
+                    </div>
+                </div>
+                <div class="wildlife-stat">
+                    <div class="stat">
+                        <span class="number">120</span>
+                        <span class="label">Bird Species</span>
+                    </div>
+                </div>
+                <div class="wildlife-stat">
+                    <div class="stat">
+                        <span class="number">45</span>
+                        <span class="label">Mammal Species</span>
+                    </div>
+                </div>
+                <div class="wildlife-stat">
+                    <div class="stat">
+                        <span class="number">15</span>
+                        <span class="label">Endangered Species</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="species-category">
+        <div class="container">
+            <h2 class="section-title">Mammals</h2>
+            <div class="wildlife-grid">
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #8D6E63;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Eastern Gray Squirrel <span class="audio-icon">🔊</span></h3>
+                        <audio id="squirrel-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Sciurus carolinensis</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>The Eastern Gray Squirrel is one of our most visible mammals. These agile tree-dwellers can be spotted gathering nuts and seeds throughout the forest, especially in the oak and hickory sections. They play a crucial role in forest regeneration by burying nuts and seeds, many of which grow into new trees.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Squirrels can find food they've buried months later, even under a foot of snow, thanks to their excellent spatial memory and sense of smell.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #795548;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">White-tailed Deer <span class="audio-icon">🔊</span></h3>
+                        <audio id="deer-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Odocoileus virginianus</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>White-tailed deer are graceful browsers that can be spotted in forest clearings, especially during dawn and dusk. Males grow new antlers each year, which are shed in winter. These adaptable mammals have a significant influence on forest understory composition through their selective feeding habits.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Deer can jump up to 10 feet high and 30 feet in length in a single bound, allowing them to easily clear fences and obstacles when evading predators.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #5D4037;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">American Black Bear <span class="audio-icon">🔊</span></h3>
+                        <audio id="bear-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Ursus americanus</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>The American Black Bear is the largest predator in our forest. Despite their name, these bears can be brown or cinnamon colored as well as black. They are omnivorous, feeding primarily on berries, nuts, and insects, though they occasionally take small mammals. Bears are most active in early morning and evening.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Black bears have an incredible sense of smell that is approximately seven times more sensitive than a bloodhound's, allowing them to detect food from over a mile away.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="species-category">
+        <div class="container">
+            <h2 class="section-title">Birds</h2>
+            <div class="wildlife-grid">
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #E53935;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Northern Cardinal <span class="audio-icon">🔊</span></h3>
+                        <audio id="cardinal-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Cardinalis cardinalis</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>The striking red plumage of the male Northern Cardinal makes it one of our most recognizable birds. These vocal songbirds maintain territories year-round and can often be heard singing their clear, whistled phrases from prominent perches in forest edges and thickets.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Unlike many songbirds, female cardinals also sing. Mated pairs often vocalize back and forth to each other, and the female may sing to communicate nest location to her mate.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #4CAF50;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Pileated Woodpecker <span class="audio-icon">🔊</span></h3>
+                        <audio id="woodpecker-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Dryocopus pileatus</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>The crow-sized Pileated Woodpecker is our largest woodpecker species. With their striking red crest and powerful bill, these birds excavate distinctive rectangular holes in dead trees as they search for their favorite food: carpenter ants. Their loud drumming and cackling calls echo through the mature forest sections.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>The abandoned nest cavities of Pileated Woodpeckers provide essential shelter for many forest species, including owls, ducks, bats, and pine martens.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #1565C0;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Wood Thrush <span class="audio-icon">🔊</span></h3>
+                        <audio id="thrush-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Hylocichla mustelina</span>
+                            <span>Summer breeding</span>
+                        </div>
+                        <div class="conservation-status status-vu">Vulnerable</div>
+                        <p>The Wood Thrush is renowned for its beautiful, flute-like song that resonates through the forest at dawn and dusk. These medium-sized songbirds nest in the understory of mature deciduous forests and feed primarily on soil invertebrates. They are neotropical migrants, spending winters in Central America.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>The Wood Thrush can sing two notes simultaneously through its Y-shaped voice box, allowing it to harmonize with itself during its ethereal songs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="species-category">
+        <div class="container">
+            <h2 class="section-title">Reptiles & Amphibians</h2>
+            <div class="wildlife-grid">
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #2E7D32;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Eastern Box Turtle <span class="audio-icon">🔊</span></h3>
+                        <audio id="turtle-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Terrapene carolina</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-vu">Vulnerable</div>
+                        <p>The Eastern Box Turtle is a terrestrial turtle with a high-domed shell that can be closed completely to protect the animal from predators. These slow-moving reptiles can live for 100 years or more and maintain small home ranges throughout their lives. Look for them in moist forest floors and along woodland edges.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Box turtles can remember the locations of feeding areas for many years, demonstrating remarkable spatial memory despite their small brain size.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #FF6F00;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Red-spotted Newt <span class="audio-icon">🔊</span></h3>
+                        <audio id="newt-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Notophthalmus viridescens</span>
+                            <span>Year-round resident</span>
+                        </div>
+                        <div class="conservation-status status-lc">Least Concern</div>
+                        <p>The Red-spotted Newt has one of the most complex life cycles of any forest species. It begins life as an aquatic larva, transforms into a bright orange juvenile (red eft) that lives on the forest floor for 1-3 years, then returns to water as an olive-green adult. These striking amphibians can be found in our forest pools and moist woodland areas.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Red efts produce a powerful neurotoxin in their skin that makes them unpalatable to most predators. Their bright orange coloration serves as a warning.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="species-card">
+                    <div class="species-img" style="background-color: #424242;"></div>
+                    <div class="species-content">
+                        <h3 class="audio-hover">Timber Rattlesnake <span class="audio-icon">🔊</span></h3>
+                        <audio id="snake-sound">
+                            <source src="audio/forest-sounds.mp3" type="audio/mp3">
+                        </audio>
+                        <div class="species-meta">
+                            <span>Crotalus horridus</span>
+                            <span>Active April-October</span>
+                        </div>
+                        <div class="conservation-status status-en">Endangered</div>
+                        <p>The Timber Rattlesnake is a venomous pit viper that plays an important role in controlling rodent populations. These secretive reptiles prefer remote, rocky outcrops and mature forests with minimal human disturbance. Despite their fearsome reputation, they are not aggressive and will use their rattle as a warning when disturbed.</p>
+                        <div class="fun-fact">
+                            <h4>Did You Know?</h4>
+                            <p>Timber rattlesnakes add a new segment to their rattle each time they shed their skin, which happens several times per year. However, the segments can break off, so rattle size is not a reliable indicator of age.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wildlife-watch">
+        <div class="container">
+            <h2 class="section-title">Wildlife Watching Tips</h2>
+            <p class="text-center">Observing wildlife is one of the most rewarding experiences at Forest World. Follow these guidelines to maximize your chances of meaningful wildlife encounters while respecting animal welfare.</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🕗</div>
+                    <h3>Timing Is Everything</h3>
+                    <p>Visit during dawn and dusk when many forest animals are most active. These "golden hours" are when mammals feed and birds are particularly vocal.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">👔</div>
+                    <h3>Dress Appropriately</h3>
+                    <p>Wear neutral colors that blend with the environment. Avoid bright clothing, perfumes, or scented products that might alert wildlife to your presence.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🤫</div>
+                    <h3>Move Slowly & Quietly</h3>
+                    <p>Walk softly, speak in whispers, and avoid sudden movements. Patience is key—sometimes the best strategy is to find a comfortable spot and wait.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🔭</div>
+                    <h3>Bring Binoculars</h3>
+                    <p>Quality optics allow you to observe animals from a distance that doesn't disturb their natural behavior. Our visitor center offers binocular rentals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-wildlife">
+        <div class="container">
+            <h2 class="section-title">Seasonal Wildlife Guide</h2>
+            <p class="text-center">Forest wildlife changes dramatically with the seasons. Use this guide to help plan your visit based on which animals you most hope to observe.</p>
+            
+            <div class="season-selector">
+                <div class="season-btn active" data-season="spring">Spring</div>
+                <div class="season-btn" data-season="summer">Summer</div>
+                <div class="season-btn" data-season="autumn">Autumn</div>
+                <div class="season-btn" data-season="winter">Winter</div>
+            </div>
+            
+            <div class="seasonal-content">
+                <div class="seasonal-panel spring active">
+                    <table class="wildlife-table">
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Activity</th>
+                                <th>Where to Look</th>
+                                <th>Best Viewing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Migratory Songbirds</td>
+                                <td>Nesting, Singing</td>
+                                <td>Tree Canopy, Shrub Layer</td>
+                                <td>Early Morning (5-9am)</td>
+                            </tr>
+                            <tr>
+                                <td>Spring Peepers</td>
+                                <td>Breeding Chorus</td>
+                                <td>Woodland Pools</td>
+                                <td>Evening (7-10pm)</td>
+                            </tr>
+                            <tr>
+                                <td>White-tailed Deer</td>
+                                <td>Fawning</td>
+                                <td>Forest Edges, Meadows</td>
+                                <td>Dawn and Dusk</td>
+                            </tr>
+                            <tr>
+                                <td>Black Bears</td>
+                                <td>Foraging after Hibernation</td>
+                                <td>Berry Patches, Stream Edges</td>
+                                <td>Early Morning</td>
+                            </tr>
+                            <tr>
+                                <td>Spotted Salamanders</td>
+                                <td>Breeding Migration</td>
+                                <td>Vernal Pools</td>
+                                <td>Rainy Nights in Early Spring</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="seasonal-panel summer">
+                    <table class="wildlife-table">
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Activity</th>
+                                <th>Where to Look</th>
+                                <th>Best Viewing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fireflies</td>
+                                <td>Mating Displays</td>
+                                <td>Forest Edges, Meadows</td>
+                                <td>Evening (9-11pm)</td>
+                            </tr>
+                            <tr>
+                                <td>Monarch Butterflies</td>
+                                <td>Feeding, Egg-laying</td>
+                                <td>Meadows with Milkweed</td>
+                                <td>Mid-day (10am-2pm)</td>
+                            </tr>
+                            <tr>
+                                <td>River Otters</td>
+                                <td>Playing, Fishing</td>
+                                <td>Streams and Ponds</td>
+                                <td>Early Morning, Late Afternoon</td>
+                            </tr>
+                            <tr>
+                                <td>Bats</td>
+                                <td>Feeding on Insects</td>
+                                <td>Forest Clearings, Waterways</td>
+                                <td>Dusk (8-10pm)</td>
+                            </tr>
+                            <tr>
+                                <td>Box Turtles</td>
+                                <td>Foraging, Nesting</td>
+                                <td>Forest Floor, Sunny Patches</td>
+                                <td>Mid-morning after Rain</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="seasonal-panel autumn">
+                    <table class="wildlife-table">
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Activity</th>
+                                <th>Where to Look</th>
+                                <th>Best Viewing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>White-tailed Deer</td>
+                                <td>Rutting (Mating) Season</td>
+                                <td>Forest Edges, Fields</td>
+                                <td>Dawn and Dusk</td>
+                            </tr>
+                            <tr>
+                                <td>Hawks</td>
+                                <td>Migration</td>
+                                <td>Ridgetops, Open Sky</td>
+                                <td>Mid-day (Thermals)</td>
+                            </tr>
+                            <tr>
+                                <td>Black Bears</td>
+                                <td>Intensive Feeding (Hyperphagia)</td>
+                                <td>Oak Groves, Beechnut Areas</td>
+                                <td>Throughout Day</td>
+                            </tr>
+                            <tr>
+                                <td>Gray Squirrels</td>
+                                <td>Nut Caching</td>
+                                <td>Oak and Hickory Trees</td>
+                                <td>Morning, Afternoon</td>
+                            </tr>
+                            <tr>
+                                <td>Wild Turkeys</td>
+                                <td>Flock Formation, Feeding</td>
+                                <td>Forest Floor, Fields</td>
+                                <td>Mid-morning</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="seasonal-panel winter">
+                    <table class="wildlife-table">
+                        <thead>
+                            <tr>
+                                <th>Species</th>
+                                <th>Activity</th>
+                                <th>Where to Look</th>
+                                <th>Best Viewing Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bald Eagles</td>
+                                <td>Hunting, Nesting</td>
+                                <td>Large Trees Near Water</td>
+                                <td>Mid-morning</td>
+                            </tr>
+                            <tr>
+                                <td>Foxes</td>
+                                <td>Hunting, Mating</td>
+                                <td>Forest Edges, Fields</td>
+                                <td>Dawn and Dusk</td>
+                            </tr>
+                            <tr>
+                                <td>Winter Finches</td>
+                                <td>Feeding Flocks</td>
+                                <td>Conifer Stands, Birch Trees</td>
+                                <td>Throughout Day</td>
+                            </tr>
+                            <tr>
+                                <td>White-tailed Deer</td>
+                                <td>Browsing in Groups</td>
+                                <td>Hemlock Groves, Field Edges</td>
+                                <td>Late Afternoon</td>
+                            </tr>
+                            <tr>
+                                <td>Animal Tracks</td>
+                                <td>Movement Patterns</td>
+                                <td>Fresh Snow</td>
+                                <td>Morning After Snowfall</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Wildlife Monitoring Program</h2>
+                <p>Become a citizen scientist and help track wildlife populations in Forest World. Sign up for our newsletter to receive training opportunities and seasonal wildlife updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Forest World</h3>
+                    <p>Dedicated to preserving and sharing the wonder of forest ecosystems through immersive experiences and conservation initiatives.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">FB</a>
+                        <a href="#" class="social-icon" title="Instagram">IG</a>
+                        <a href="#" class="social-icon" title="Twitter">TW</a>
+                        <a href="#" class="social-icon" title="YouTube">YT</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="attractions.html">Attractions</a></li>
+                        <li><a href="animals.html">Wildlife</a></li>
+                        <li><a href="conservation.html">Conservation</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-visits">
+                    <h4>Plan Your Visit</h4>
+                    <ul>
+                        <li><a href="#">Tickets & Pricing</a></li>
+                        <li><a href="#">Opening Hours</a></li>
+                        <li><a href="#">Directions & Parking</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Group Bookings</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Information</h4>
+                    <address>
+                        <p>1234 Forest Path Road</p>
+                        <p>Woodland Valley, WV 98765</p>
+                        <p>Email: info@forestworld.org</p>
+                        <p>Phone: (555) 123-4567</p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Forest World. All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Accessibility Statement</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Season tabs functionality
+            const seasonBtns = document.querySelectorAll('.season-btn');
+            const seasonalPanels = document.querySelectorAll('.seasonal-panel');
+            
+            seasonBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const season = btn.getAttribute('data-season');
+                    
+                    // Remove active class from all buttons
+                    seasonBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    // Hide all seasonal panels
+                    seasonalPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // Show the selected seasonal panel
+                    document.querySelector(`.seasonal-panel.${season}`).classList.add('active');
+                });
+            });
+            
+            // Audio hover functionality
+            const audioHovers = document.querySelectorAll('.audio-hover');
+            
+            audioHovers.forEach(hover => {
+                hover.addEventListener('mouseenter', function() {
+                    const animalName = this.textContent.trim().split(' ')[0].toLowerCase();
+                    const audio = document.getElementById(`${animalName}-sound`);
+                    if (audio) {
+                        audio.currentTime = 0;
+                        audio.play();
+                    }
+                });
+                
+                hover.addEventListener('mouseleave', function() {
+                    const animalName = this.textContent.trim().split(' ')[0].toLowerCase();
+                    const audio = document.getElementById(`${animalName}-sound`);
+                    if (audio) {
+                        audio.pause();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
